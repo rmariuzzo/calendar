@@ -1,10 +1,20 @@
 import React from 'react'
+import { createGlobalStyle } from 'styled-components'
+import { Calendar } from './Calendar'
+
+const GlobalStyle = createGlobalStyle`
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+`
 
 export default function App() {
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
+    <>
+      <GlobalStyle />
+      <Calendar />
+    </>
   )
 }
