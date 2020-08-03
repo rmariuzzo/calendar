@@ -4,6 +4,7 @@
   "description": "",
   "keywords": [],
   "main": "src/index.tsx",
+  "homepage": "https://rmariuzzo.github.io/calendar",
   "dependencies": {
     "date-fns": "2.15.0",
     "react": "^16.12.0",
