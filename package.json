@@ -7,16 +7,17 @@
   "homepage": "https://rmariuzzo.github.io/calendar",
   "dependencies": {
     "date-fns": "2.15.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-scripts": "3.3.0",
+    "normalize.css": "^8.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1",
     "styled-components": "5.1.1"
   },
   "devDependencies": {
-    "@types/react": "16.9.19",
-    "@types/react-dom": "16.9.5",
+    "@types/react": "16.9.44",
+    "@types/react-dom": "16.9.8",
     "@types/styled-components": "5.1.2",
-    "typescript": "3.7.5"
+    "typescript": "3.9.7"
   },
   "scripts": {
     "start": "react-scripts start",

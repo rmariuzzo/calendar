@@ -1,20 +1,26 @@
 import React from 'react'
-import { createGlobalStyle } from 'styled-components'
-import { Calendar } from './Calendar'
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
+
+import { Calendar } from './calendar/Calendar'
+import { theme } from './theme'
 
 const GlobalStyle = createGlobalStyle`
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+  html,
+  body {
+    background-color: ${$ => $.theme.colors.neutral};
+  }
+
+  * {
+    box-sizing: border-box;
+    font-family: ${$ => $.theme.fontFamily};
   }
 `
 
 export default function App() {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Calendar />
-    </>
+    </ThemeProvider>
   )
 }
