@@ -8,6 +8,8 @@ import styled from 'styled-components'
 
 import { unit } from '../theme'
 
+import { ChevronLeft, ChevronRight } from './icons'
+
 export const controlsHeight = unit * 3
 
 const Container = styled.div`
@@ -20,15 +22,36 @@ const Container = styled.div`
 `
 
 const Button = styled.button`
-  display: block;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   width: ${controlsHeight}px;
+  border: ${$ => $.theme.colors.neutralDark} solid ${$ => $.theme.borderWidths.thin}px;
+  border-radius: ${$ => $.theme.borderRadiuses.normal}px;
+  background-color: ${$ => $.theme.colors.neutral};
+
+  & > svg {
+    height: ${$ => $.theme.unit}px;
+    width: ${$ => $.theme.unit}px;
+
+    &:first-child {
+      margin-right: ${$ => $.theme.unit / 2}px;
+    }
+
+    &:last-child {
+      margin-left: ${$ => $.theme.unit / 2}px;
+    }
+  }
 `
 
 const Month = styled.div`
   flex: 1 0 auto;
   padding: 0 ${unit}px;
   text-align: center;
+  font-size: ${$ => $.theme.fontSizes.largest}px;
+  font-weight: ${$ => $.theme.fontWeights.bold};
 `
 
 type CalendarControlsProps = {
@@ -49,11 +72,15 @@ export const CalendarControls: FC<CalendarControlsProps> = props => {
 
   return (
     <Container {...more}>
-      <Button onClick={previousMonth}>&lt;</Button>
+      <Button onClick={previousMonth}>
+        <ChevronLeft />
+      </Button>
       <Month>
         {format(value, 'MMMM - yyyy')}
       </Month>
-      <Button onClick={nextMonth}>&gt;</Button>
+      <Button onClick={nextMonth}>
+        <ChevronRight />
+      </Button>
     </Container>
   )
 }

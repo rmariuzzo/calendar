@@ -24,6 +24,9 @@ const Container = styled.ul`
   list-style-type: none;
   margin: 0;
   padding: 0;
+  border: ${$ => $.theme.colors.neutralDark} solid ${$ => $.theme.borderWidths.thin}px;
+  border-radius: ${$ => $.theme.unit / 2}px;
+  overflow: hidden;
 `
 
 type CalendarDateProps = {
@@ -34,7 +37,6 @@ type CalendarDateProps = {
 const CalendarDate = styled.li<CalendarDateProps>`
   flex: 0 0 ${100 / 7}%;
   height: calc((100vh - ${controlsHeight + footerHeight}px - ${unit * 2}px) / 6);
-  border: #000 solid 1px;
   color: ${props => (props.inMonth ? '#333' : '#666')};
   text-align: right;
   background-color: ${props => (props.inMonth ? '#fff' : '#eee')};
@@ -42,6 +44,7 @@ const CalendarDate = styled.li<CalendarDateProps>`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  
   ${props =>
     props.today &&
     `
@@ -49,6 +52,14 @@ const CalendarDate = styled.li<CalendarDateProps>`
     border-color: #000;
     background-color: #bbb;
   `}
+
+  &:nth-last-child(n+8) {
+    border-bottom: ${$ => $.theme.colors.neutralDark} solid ${$ => $.theme.borderWidths.thin}px;
+  }
+
+  &:not(:nth-child(7n)) {
+    border-right: ${$ => $.theme.colors.neutralDark} solid ${$ => $.theme.borderWidths.thin}px;
+  }
 `
 
 const weekStartsOn = 1
