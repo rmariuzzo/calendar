@@ -47,11 +47,19 @@ const Button = styled.button`
 `
 
 const Month = styled.div`
-  flex: 1 0 auto;
+  flex: 1 1 auto;
   padding: 0 ${unit}px;
   text-align: center;
-  font-size: ${$ => $.theme.fontSizes.largest}px;
+  font-size: ${$ => $.theme.fontSizes.large}px;
   font-weight: ${$ => $.theme.fontWeights.bold};
+
+  ${$ => $.theme.media.up('mobile')} {
+    font-size: ${$ => $.theme.fontSizes.larger}px;
+  }
+
+  ${$ => $.theme.media.up('tablet')} {
+    font-size: ${$ => $.theme.fontSizes.largest}px;
+  }
 `
 
 type CalendarControlsProps = {

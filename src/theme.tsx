@@ -1,6 +1,18 @@
+import createMedia from 'styled-media-helper'
+
 export const unit = 20
 
+const breakpoints = {
+  mobile: 320,
+  tablet: 768,
+  desktop: 1240,
+}
+
+const media = createMedia(breakpoints)
+
 export const theme = {
+  breakpoints,
+  media,
   fontFamily: "'Noto Sans JP', sans-serif",
   fontWeights: {
     light: 200,
