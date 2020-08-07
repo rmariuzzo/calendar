@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.js": "/calendar/static/js/main.05710077.chunk.js",
-    "main.js.map": "/calendar/static/js/main.05710077.chunk.js.map",
+    "main.js": "/calendar/static/js/main.d2f53d97.chunk.js",
+    "main.js.map": "/calendar/static/js/main.d2f53d97.chunk.js.map",
     "runtime-main.js": "/calendar/static/js/runtime-main.206a5372.js",
     "runtime-main.js.map": "/calendar/static/js/runtime-main.206a5372.js.map",
     "static/css/2.764ccc25.chunk.css": "/calendar/static/css/2.764ccc25.chunk.css",
-    "static/js/2.21073be8.chunk.js": "/calendar/static/js/2.21073be8.chunk.js",
-    "static/js/2.21073be8.chunk.js.map": "/calendar/static/js/2.21073be8.chunk.js.map",
+    "static/js/2.d558c4b5.chunk.js": "/calendar/static/js/2.d558c4b5.chunk.js",
+    "static/js/2.d558c4b5.chunk.js.map": "/calendar/static/js/2.d558c4b5.chunk.js.map",
     "index.html": "/calendar/index.html",
-    "precache-manifest.877f5b5431cb4ba6dd1608853acdc442.js": "/calendar/precache-manifest.877f5b5431cb4ba6dd1608853acdc442.js",
+    "precache-manifest.e1c846c91142d9b4a308c3d266496e12.js": "/calendar/precache-manifest.e1c846c91142d9b4a308c3d266496e12.js",
     "service-worker.js": "/calendar/service-worker.js",
     "static/css/2.764ccc25.chunk.css.map": "/calendar/static/css/2.764ccc25.chunk.css.map",
-    "static/js/2.21073be8.chunk.js.LICENSE.txt": "/calendar/static/js/2.21073be8.chunk.js.LICENSE.txt",
+    "static/js/2.d558c4b5.chunk.js.LICENSE.txt": "/calendar/static/js/2.d558c4b5.chunk.js.LICENSE.txt",
     "static/media/chevron-left-regular.5d57babc.svg": "/calendar/static/media/chevron-left-regular.5d57babc.svg",
     "static/media/chevron-right-regular.dbace79c.svg": "/calendar/static/media/chevron-right-regular.dbace79c.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.206a5372.js",
     "static/css/2.764ccc25.chunk.css",
-    "static/js/2.21073be8.chunk.js",
-    "static/js/main.05710077.chunk.js"
+    "static/js/2.d558c4b5.chunk.js",
+    "static/js/main.d2f53d97.chunk.js"
   ]
 }
