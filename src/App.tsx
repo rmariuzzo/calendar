@@ -7,12 +7,16 @@ import { theme } from './theme'
 const GlobalStyle = createGlobalStyle`
   html,
   body {
-    background-color: ${$ => $.theme.colors.neutral};
+    background-color: ${$ => $.theme.colors.white};
   }
 
   * {
     box-sizing: border-box;
     font-family: ${$ => $.theme.fontFamily};
+  }
+
+  *:focus {
+    outline: ${$ => $.theme.colors.primary} auto 1px;
   }
 `
 

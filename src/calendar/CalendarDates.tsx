@@ -11,7 +11,7 @@ import {
   format,
   getWeeksInMonth
 } from 'date-fns'
-import { lighten } from 'polished'
+import { lighten, mix } from 'polished'
 import React, { FC } from 'react'
 import styled, { css } from 'styled-components'
 
@@ -26,8 +26,7 @@ const Container = styled.ul`
   margin: 0;
   padding: 0;
   border-radius: ${$ => $.theme.unit / 2}px;
-  overflow: hidden;
-  box-shadow: ${$ => $.theme.boxShadows.neutralDark};
+  box-shadow: ${$ => $.theme.boxShadows.normal};
 `
 
 type CalendarDateProps = {
@@ -38,16 +37,16 @@ type CalendarDateProps = {
 const CalendarDate = styled.li<CalendarDateProps>`
   flex: 0 0 ${100 / 7}%;
   height: calc((100vh - ${controlsHeight + footerHeight}px - ${unit * 2}px) / 6);
-  color: ${$ => ($.inMonth ? $.theme.colors.neutralDarker : $.theme.colors.neutralDark)};
+  color: ${$ => mix($.inMonth ? 0 : .75, '#fff', $.theme.colors.gray)};
   text-align: right;
-  background-color: ${$ => lighten($.inMonth ? 1 : 0, $.theme.colors.neutral)};
+  background-color: ${$ => lighten($.inMonth ? 1 : 0, $.theme.colors.white)};
   padding: ${unit / 2}px;
 
   ${$ => $.today && css`
     position: relative;
     font-weight: ${$ => $.theme.fontWeights.bold};
     background-color: ${$ => lighten(.4, $.theme.colors.primary)};
-    box-shadow: ${$ => $.theme.boxShadows.neutralDark};
+    box-shadow: ${$ => $.theme.boxShadows.normal};
 
     &:after {
       content: '';
@@ -62,11 +61,11 @@ const CalendarDate = styled.li<CalendarDateProps>`
   `}
 
   &:nth-last-child(n+8) {
-    border-bottom: ${$ => $.theme.colors.neutralDark} solid ${$ => $.theme.borderWidths.thin}px;
+    border-bottom: ${$ => mix(.75, '#fff', $.theme.colors.gray)} solid ${$ => $.theme.borderWidths.thin}px;
   }
 
   &:not(:nth-child(7n)) {
-    border-right: ${$ => $.theme.colors.neutralDark} solid ${$ => $.theme.borderWidths.thin}px;
+    border-right: ${$ => mix(.75, '#fff', $.theme.colors.gray)} solid ${$ => $.theme.borderWidths.thin}px;
   }
 `
 

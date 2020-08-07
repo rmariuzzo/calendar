@@ -9,6 +9,7 @@ import styled from 'styled-components'
 import { unit } from '../theme'
 
 import { ChevronLeft, ChevronRight } from './icons'
+import { mix } from 'polished'
 
 export const controlsHeight = unit * 3
 
@@ -23,15 +24,24 @@ const Container = styled.div`
 
 const Button = styled.button`
   cursor: pointer;
+  color: ${$ => mix(.25, '#fff', $.theme.colors.gray)};
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   width: ${controlsHeight}px;
-  border: ${$ => $.theme.colors.neutralDark} solid ${$ => $.theme.borderWidths.thin}px;
+  border: ${$ => mix(.75, '#fff', $.theme.colors.gray)} solid ${$ => $.theme.borderWidths.thin}px;
   border-radius: ${$ => $.theme.borderRadiuses.normal}px;
-  background-color: ${$ => $.theme.colors.neutral};
-  box-shadow: ${$ => $.theme.boxShadows.neutralDark};
+  background-color: ${$ => $.theme.colors.white};
+  box-shadow: ${$ => $.theme.boxShadows.normal};
+  transition: ${$ => $.theme.transitions.all};
+
+  &:hover,
+  &:focus {
+    color: ${$ => $.theme.colors.gray};
+    border-color: ${$ => mix(.5, '#fff', $.theme.colors.gray)};
+    box-shadow: ${$ => $.theme.boxShadows.large};
+  }
 
   & > svg {
     height: ${$ => $.theme.unit}px;
@@ -51,7 +61,7 @@ const Month = styled.div`
   flex: 1 1 auto;
   padding: 0 ${unit}px;
   text-align: center;
-  color: ${$ => $.theme.colors.neutralDarker};
+  color: ${$ => $.theme.colors.gray};
   font-size: ${$ => $.theme.fontSizes.large}px;
   font-weight: ${$ => $.theme.fontWeights.bold};
 

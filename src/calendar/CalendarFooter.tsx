@@ -1,3 +1,4 @@
+import { mix } from 'polished'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -13,6 +14,10 @@ const Container = styled.div`
   font-size: ${$ => $.theme.fontSizes.small}px;
   text-transform: uppercase;
   font-weight: ${$ => $.theme.fontWeights.bold};
+
+  &, a {
+    color: ${$ => mix(.5, '#fff', $.theme.colors.gray)};
+  }
 `
 
 export const CalendarFooter = () => {
