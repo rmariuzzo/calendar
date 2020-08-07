@@ -31,6 +31,7 @@ const Button = styled.button`
   border: ${$ => $.theme.colors.neutralDark} solid ${$ => $.theme.borderWidths.thin}px;
   border-radius: ${$ => $.theme.borderRadiuses.normal}px;
   background-color: ${$ => $.theme.colors.neutral};
+  box-shadow: ${$ => $.theme.boxShadows.neutralDark};
 
   & > svg {
     height: ${$ => $.theme.unit}px;
@@ -50,6 +51,7 @@ const Month = styled.div`
   flex: 1 1 auto;
   padding: 0 ${unit}px;
   text-align: center;
+  color: ${$ => $.theme.colors.neutralDarker};
   font-size: ${$ => $.theme.fontSizes.large}px;
   font-weight: ${$ => $.theme.fontWeights.bold};
 

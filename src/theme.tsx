@@ -10,6 +10,13 @@ const breakpoints = {
 
 const media = createMedia(breakpoints)
 
+const colors = {
+  neutral: '#f8f9fc',
+  neutralDark: '#c3c2c0',
+  neutralDarker: '#474b5c',
+  primary: '#3069ed',
+}
+
 export const theme = {
   breakpoints,
   media,
@@ -35,10 +42,11 @@ export const theme = {
     normal: 6,
   },
   unit,
-  colors: {
-    neutral: '#f8f9fc',
-    neutralDark: '#c3c2c0',
-    neutralDarker: '#474b5c',
+  colors,
+  boxShadows: {
+    neutral: (() =>`0 0 ${unit}px ${-unit/3}px ${colors.neutral}`),
+    neutralDark: (() =>`0 0 ${unit}px ${-unit/3}px ${colors.neutralDark}`),
+    neutralDarker: (() =>`0 0 ${unit}px ${-unit/3}px ${colors.neutralDarker}`),
   },
 }
 

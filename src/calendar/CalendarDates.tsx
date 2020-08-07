@@ -11,10 +11,11 @@ import {
   format,
   getWeeksInMonth
 } from 'date-fns'
+import { lighten } from 'polished'
 import React, { FC } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-import { unit } from './../theme'
+import { unit } from '../theme'
 import { controlsHeight } from './CalendarControls'
 import { footerHeight } from './CalendarFooter'
 
@@ -24,9 +25,9 @@ const Container = styled.ul`
   list-style-type: none;
   margin: 0;
   padding: 0;
-  border: ${$ => $.theme.colors.neutralDark} solid ${$ => $.theme.borderWidths.thin}px;
   border-radius: ${$ => $.theme.unit / 2}px;
   overflow: hidden;
+  box-shadow: ${$ => $.theme.boxShadows.neutralDark};
 `
 
 type CalendarDateProps = {
@@ -37,20 +38,27 @@ type CalendarDateProps = {
 const CalendarDate = styled.li<CalendarDateProps>`
   flex: 0 0 ${100 / 7}%;
   height: calc((100vh - ${controlsHeight + footerHeight}px - ${unit * 2}px) / 6);
-  color: ${props => (props.inMonth ? '#333' : '#666')};
+  color: ${$ => ($.inMonth ? $.theme.colors.neutralDarker : $.theme.colors.neutralDark)};
   text-align: right;
-  background-color: ${props => (props.inMonth ? '#fff' : '#eee')};
+  background-color: ${$ => lighten($.inMonth ? 1 : 0, $.theme.colors.neutral)};
   padding: ${unit / 2}px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  
-  ${props =>
-    props.today &&
-    `
-    font-weight: bold;
-    border-color: #000;
-    background-color: #bbb;
+
+  ${$ => $.today && css`
+    position: relative;
+    font-weight: ${$ => $.theme.fontWeights.bold};
+    background-color: ${$ => lighten(.4, $.theme.colors.primary)};
+    box-shadow: ${$ => $.theme.boxShadows.neutralDark};
+
+    &:after {
+      content: '';
+      border: ${$ => $.theme.colors.primary} solid ${$ => $.theme.borderWidths.normal}px;
+      border-radius: ${$ => $.theme.borderRadiuses.small}px;
+      position: absolute;
+      left: -2px;
+      right: -2px;
+      top: -2px;
+      bottom: -2px;
+    }
   `}
 
   &:nth-last-child(n+8) {
