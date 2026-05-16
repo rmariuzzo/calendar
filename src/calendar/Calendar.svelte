@@ -7,13 +7,15 @@
 </script>
 
 <div class="calendar">
-  <CalendarControls value={month} onChange={(v) => (month = v)} />
+  <CalendarControls bind:value={month} />
   <CalendarDates {month} />
   <CalendarFooter />
 </div>
 
 <style>
   .calendar {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     height: 100vh;
     padding: var(--unit);
   }

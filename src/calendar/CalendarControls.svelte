@@ -5,13 +5,12 @@
 
   interface Props {
     value: Date
-    onChange: (value: Date) => void
   }
 
-  let { value, onChange }: Props = $props()
+  let { value = $bindable() }: Props = $props()
 
-  const nextMonth = () => onChange(addMonths(value, 1))
-  const previousMonth = () => onChange(subMonths(value, 1))
+  const nextMonth = () => (value = addMonths(value, 1))
+  const previousMonth = () => (value = subMonths(value, 1))
 </script>
 
 <div class="controls">

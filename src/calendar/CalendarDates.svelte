@@ -20,7 +20,7 @@
   let { month }: Props = $props()
 
   const weekStartsOn = 1 as const
-  const now = new Date()
+  let now = new Date()
 
   let dates = $derived(
     eachDayOfInterval({
@@ -52,13 +52,14 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
+    height: 100%;
     border-radius: 10px;
     box-shadow: var(--box-shadow-normal);
   }
 
   .date {
     flex: 0 0 14.285714%;
-    height: calc((100vh - 140px) / 6);
+    height: calc(100% / 6);
     color: color-mix(in srgb, #fff 75%, #474b5c);
     text-align: right;
     background-color: var(--color-white);

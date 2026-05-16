@@ -1,9 +1,9 @@
 <script lang="ts">
-  import pkg from '../../package.json'
+  const version = __APP_VERSION__
 </script>
 
 <div class="footer">
-  v{pkg.version} •
+  v{version} •
   <a href="https://github.com/rmariuzzo" target="_blank" rel="noopener noreferrer">
     @rmariuzzo
   </a>
