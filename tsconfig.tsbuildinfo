@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/index.tsx","./src/theme.tsx","./src/vite-env.d.ts","./src/calendar/calendar.tsx","./src/calendar/calendarcontrols.tsx","./src/calendar/calendardates.tsx","./src/calendar/calendarfooter.tsx","./src/calendar/icons/index.tsx"],"version":"5.9.3"}

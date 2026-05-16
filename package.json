@@ -1,37 +1,35 @@
 {
   "name": "@rmariuzzo/calendar",
   "version": "1.0.9",
+  "type": "module",
   "description": "",
   "keywords": [],
-  "main": "src/index.tsx",
   "homepage": "https://rmariuzzo.github.io/calendar",
   "dependencies": {
-    "date-fns": "2.15.0",
-    "normalize.css": "^8.0.1",
-    "polished": "^3.6.5",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
-    "styled-components": "5.1.1",
-    "styled-media-helper": "^2.0.2"
+    "date-fns": "^3",
+    "modern-normalize": "^2",
+    "react": "^19",
+    "react-dom": "^19",
+    "styled-components": "^6"
   },
   "devDependencies": {
-    "@types/react": "16.9.44",
-    "@types/react-dom": "16.9.8",
-    "@types/styled-components": "5.1.2",
-    "typescript": "3.9.7"
+    "@eslint/js": "^9",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^4",
+    "eslint": "^9",
+    "eslint-plugin-react": "^7",
+    "eslint-plugin-react-hooks": "^5",
+    "typescript": "^5",
+    "typescript-eslint": "^8",
+    "vite": "^6",
+    "vite-plugin-svgr": "^4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
+    "start": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
     "postversion": "git push origin && git push origin --tags"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  }
 }

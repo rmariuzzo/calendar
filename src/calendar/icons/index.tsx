@@ -1,2 +1,2 @@
-export { ReactComponent as ChevronLeft } from './chevron-left-regular.svg'
-export { ReactComponent as ChevronRight } from './chevron-right-regular.svg'
+export { default as ChevronLeft } from './chevron-left-regular.svg?react'
+export { default as ChevronRight } from './chevron-right-regular.svg?react'

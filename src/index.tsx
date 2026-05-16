@@ -1,8 +1,6 @@
-import 'normalize.css'
-import React from 'react'
-import { render } from 'react-dom'
+import 'modern-normalize'
+import { createRoot } from 'react-dom/client'
 
 import App from './App'
 
-const rootElement = document.getElementById('root')
-render(<App />, rootElement)
+createRoot(document.getElementById('root')!).render(<App />)

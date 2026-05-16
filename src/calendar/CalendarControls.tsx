@@ -1,15 +1,9 @@
-import {
-  addMonths,
-  subMonths,
-  format
-} from 'date-fns'
-import React, { FC } from 'react'
+import { addMonths, subMonths, format } from 'date-fns'
+import { FC } from 'react'
 import styled from 'styled-components'
 
-import { unit } from '../theme'
-
+import { unit, mix } from '../theme'
 import { ChevronLeft, ChevronRight } from './icons'
-import { mix } from 'polished'
 
 export const controlsHeight = unit * 3
 
@@ -24,13 +18,13 @@ const Container = styled.div`
 
 const Button = styled.button`
   cursor: pointer;
-  color: ${$ => mix(.25, '#fff', $.theme.colors.gray)};
+  color: ${$ => mix(0.25, '#fff', $.theme.colors.gray)};
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   width: ${controlsHeight}px;
-  border: ${$ => mix(.75, '#fff', $.theme.colors.gray)} solid ${$ => $.theme.borderWidths.thin}px;
+  border: ${$ => mix(0.75, '#fff', $.theme.colors.gray)} solid ${$ => $.theme.borderWidths.thin}px;
   border-radius: ${$ => $.theme.borderRadiuses.normal}px;
   background-color: ${$ => $.theme.colors.white};
   box-shadow: ${$ => $.theme.boxShadows.normal};
@@ -39,7 +33,7 @@ const Button = styled.button`
   &:hover,
   &:focus {
     color: ${$ => $.theme.colors.gray};
-    border-color: ${$ => mix(.5, '#fff', $.theme.colors.gray)};
+    border-color: ${$ => mix(0.5, '#fff', $.theme.colors.gray)};
     box-shadow: ${$ => $.theme.boxShadows.large};
   }
 
@@ -79,25 +73,19 @@ type CalendarControlsProps = {
   onChange: (value: Date) => void
 }
 
-export const CalendarControls: FC<CalendarControlsProps> = props => {
-  const { value, onChange, ...more } = props
-
-  const nextMonth = () => {
-    onChange(addMonths(value, 1))
-  }
-
-  const previousMonth = () => {
-    onChange(subMonths(value, 1))
-  }
+export const CalendarControls: FC<CalendarControlsProps> = ({
+  value,
+  onChange,
+}) => {
+  const nextMonth = () => onChange(addMonths(value, 1))
+  const previousMonth = () => onChange(subMonths(value, 1))
 
   return (
-    <Container {...more}>
+    <Container>
       <Button onClick={previousMonth}>
         <ChevronLeft />
       </Button>
-      <Month>
-        {format(value, 'MMMM - yyyy')}
-      </Month>
+      <Month>{format(value, 'MMMM - yyyy')}</Month>
       <Button onClick={nextMonth}>
         <ChevronRight />
       </Button>
