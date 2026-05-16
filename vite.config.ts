@@ -1,8 +1,7 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import svgr from 'vite-plugin-svgr'
+import { svelte } from '@sveltejs/vite-plugin-svelte'
 
 export default defineConfig({
   base: '/calendar/',
-  plugins: [react(), svgr()],
+  plugins: [svelte()],
 })

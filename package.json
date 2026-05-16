@@ -8,26 +8,22 @@
   "dependencies": {
     "date-fns": "^3",
     "modern-normalize": "^2",
-    "react": "^19",
-    "react-dom": "^19",
-    "styled-components": "^6"
+    "svelte": "^5.55.7"
   },
   "devDependencies": {
     "@eslint/js": "^9",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "@vitejs/plugin-react": "^4",
+    "@sveltejs/vite-plugin-svelte": "^7.1.2",
     "eslint": "^9",
-    "eslint-plugin-react": "^7",
-    "eslint-plugin-react-hooks": "^5",
+    "eslint-plugin-svelte": "^3.17.1",
+    "svelte-check": "^4.4.8",
     "typescript": "^5",
     "typescript-eslint": "^8",
-    "vite": "^6",
-    "vite-plugin-svgr": "^4"
+    "vite": "^8.0.13"
   },
   "scripts": {
     "start": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
     "preview": "vite preview",
     "lint": "eslint .",
     "postversion": "git push origin && git push origin --tags"

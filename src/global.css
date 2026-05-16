@@ -1,0 +1,37 @@
+:root {
+  --unit: 20px;
+  --color-white: #f8f9fc;
+  --color-gray: #474b5c;
+  --color-primary: #3069ed;
+  --color-border: color-mix(in srgb, #fff 75%, #474b5c);
+  --font-family: 'Noto Sans JP', sans-serif;
+  --font-weight-light: 200;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  --font-size-small: 12px;
+  --font-size-normal: 16px;
+  --font-size-large: 18px;
+  --font-size-larger: 24px;
+  --font-size-largest: 32px;
+  --border-width-thin: 1px;
+  --border-width-normal: 3px;
+  --border-radius-small: 3px;
+  --border-radius-normal: 6px;
+  --box-shadow-normal: 0 0 20px -7px color-mix(in srgb, #fff 75%, #474b5c);
+  --box-shadow-large: 0 0 20px 0 color-mix(in srgb, #fff 75%, #474b5c);
+  --transition-all: all ease-in-out 0.25s;
+}
+
+html,
+body {
+  background-color: var(--color-white);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+*:focus {
+  outline: var(--color-primary) auto 1px;
+}
